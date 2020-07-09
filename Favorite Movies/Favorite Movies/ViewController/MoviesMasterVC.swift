@@ -19,6 +19,7 @@ class MoviesMasterVC: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -40,10 +41,13 @@ class MoviesMasterVC: UITableViewController {
 
    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! MovieCell
 
         // Configure the cell...
-        cell.textLabel?.text = MoviesData[indexPath.row].movieName
+        let movie = MoviesData[indexPath.row]
+        cell.movieNameFirst.text = movie.movieName
+        cell.movieImage.image = UIImage(named: movie.movieName)
+        cell.movieGenre.text = "\(movie.genre)"
 
         return cell
     }

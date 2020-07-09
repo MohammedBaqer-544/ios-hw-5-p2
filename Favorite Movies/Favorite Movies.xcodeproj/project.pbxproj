@@ -37,6 +37,7 @@
 		76E0C6DD24B1FCC20019DCA5 /* Charlie and the Chocolate Factory.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 76E0C6C824B1FCC20019DCA5 /* Charlie and the Chocolate Factory.mp3 */; };
 		76E0C6DE24B1FCC20019DCA5 /* The House with a Clock in Its Walls.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 76E0C6C924B1FCC20019DCA5 /* The House with a Clock in Its Walls.mp3 */; };
 		76E0C71224B515190019DCA5 /* BackgroundColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E0C71124B515190019DCA5 /* BackgroundColors.swift */; };
+		76E5F67A24B643250012DF95 /* MovieCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E5F67924B643250012DF95 /* MovieCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -72,6 +73,7 @@
 		76E0C6C824B1FCC20019DCA5 /* Charlie and the Chocolate Factory.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Charlie and the Chocolate Factory.mp3"; sourceTree = "<group>"; };
 		76E0C6C924B1FCC20019DCA5 /* The House with a Clock in Its Walls.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "The House with a Clock in Its Walls.mp3"; sourceTree = "<group>"; };
 		76E0C71124B515190019DCA5 /* BackgroundColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundColors.swift; sourceTree = "<group>"; };
+		76E5F67924B643250012DF95 /* MovieCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,6 +132,7 @@
 			children = (
 				76C35C8424B1369700B5F6CF /* MoviesMasterVC.swift */,
 				76C35C8624B1371700B5F6CF /* MovieDetailsVC.swift */,
+				76E5F67924B643250012DF95 /* MovieCell.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -263,6 +266,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				76E5F67A24B643250012DF95 /* MovieCell.swift in Sources */,
 				76C35C8524B1369700B5F6CF /* MoviesMasterVC.swift in Sources */,
 				76C35C6F24B12A5A00B5F6CF /* AppDelegate.swift in Sources */,
 				76C35C8724B1371700B5F6CF /* MovieDetailsVC.swift in Sources */,

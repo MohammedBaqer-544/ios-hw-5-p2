@@ -7,17 +7,20 @@
 //
 
 import UIKit
+import AVFoundation
 
 class MovieDetailsVC: UIViewController {
     
     var movieData: moviesModel!
     let backgroundColorSource = BackgroundColorSource()
+    var themeSongs: AVAudioPlayer?
     
     @IBOutlet weak var movieImg: UIImageView!
     @IBOutlet weak var movieName: UINavigationItem!
     @IBOutlet weak var movieRating: UILabel!
     @IBOutlet weak var movieRated: UILabel!
     @IBOutlet weak var movieReleaseDate: UILabel!
+    @IBOutlet weak var runtime: UILabel!
     @IBOutlet weak var actorImg1: UIImageView!
     @IBOutlet weak var actorName1: UILabel!
     @IBOutlet weak var actorImg2: UIImageView!
@@ -26,12 +29,13 @@ class MovieDetailsVC: UIViewController {
     @IBOutlet weak var actorName3: UILabel!
     
     @IBOutlet weak var ratingBG: UIView!
-    
     @IBOutlet weak var ratedBG: UIView!
-    
     @IBOutlet weak var yearBG: UIView!
+    @IBOutlet weak var runtimeBG: UIView!
     
     @IBOutlet var colorBg: UIView!
+    
+    
     
     
     override func viewDidLoad() {
@@ -39,8 +43,17 @@ class MovieDetailsVC: UIViewController {
         configureUI()
         setMovieDetails()
         bgColor()
-        // Do any additional setup after loading the view.
         
+        // Do any additional setup after loading the view.
+        let path = Bundle.main.path(forResource: "\(movieData.movieName).mp3", ofType:nil)!
+        let url = URL(fileURLWithPath: path)
+
+        do {
+            themeSongs = try AVAudioPlayer(contentsOf: url)
+            themeSongs?.play()
+        } catch {
+            // couldn't load file :(
+        }
     }
     
     
@@ -59,10 +72,11 @@ class MovieDetailsVC: UIViewController {
     func setMovieDetails(){
         movieName.title = movieData.movieName
         self.movieImg.image = UIImage(named: movieData.movieName)
+        
         self.movieRated.text = movieData.rated
         self.movieRating.text = String(movieData.rating)
-        
         self.movieReleaseDate.text = String(movieData.movieReleaseDate)
+        self.runtime.text = movieData.runtime
         
         self.actorImg1.image = UIImage(named: movieData.actors[0])
         self.actorName1.text = movieData.actors[0]
@@ -79,7 +93,8 @@ class MovieDetailsVC: UIViewController {
         ratedBG.layer.cornerRadius = 20
         ratingBG.layer.cornerRadius = 20
         yearBG.layer.cornerRadius = 20
-        
+        runtimeBG.layer.cornerRadius = 20
+
     }
     
     func bgColor(){
